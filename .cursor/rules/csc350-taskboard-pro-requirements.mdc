@@ -1,0 +1,110 @@
+---
+description: CSC350 TaskBoard Pro requirements (always apply)
+alwaysApply: true
+---
+
+# CSC350 Final Project Requirements (TaskBoard Pro)
+
+Build and maintain a full-stack Trello-style task management web app called **TaskBoard Pro** using:
+
+- **Next.js App Router**
+- **React functional components**
+- **Tailwind CSS** (Tailwind only for styling)
+- **MySQL** database
+- **API routes** under `app/api`
+
+## Required course topics (must be present in the final project)
+
+- **Dynamic routing**: `/boards/[id]`
+- **React state**: `useState` for forms and UI state
+- **Effects**: `useEffect` for initial data loading
+- **CRUD**: full create/read/update/delete for boards and tasks
+- **Forms + event handling**: create/edit flows for boards and tasks
+- **Search + filtering**: real-time task search by title; filter by status
+- **Loading + error states**: all data fetching should handle loading/errors
+- **UI refresh after CRUD**: update UI after every mutation (re-fetch or optimistic update)
+
+## Required pages
+
+- `/` homepage showing all boards
+- `/boards/[id]` board detail page
+
+## Required board behavior
+
+Each board has exactly 3 columns:
+
+- **To Do** (`todo`)
+- **In Progress** (`progress`)
+- **Done** (`done`)
+
+Tasks can be moved between columns using **buttons** (not drag-and-drop).
+
+## Required API routes (contract)
+
+Boards:
+
+- `GET /api/boards`
+- `POST /api/boards`
+- `PUT /api/boards/[id]`
+- `DELETE /api/boards/[id]`
+
+Tasks:
+
+- `GET /api/tasks?boardId=`
+- `POST /api/tasks`
+- `PUT /api/tasks/[id]`
+- `DELETE /api/tasks/[id]`
+
+## Required components
+
+Implement and keep these components reusable (in `/components`):
+
+- `BoardCard`
+- `CreateBoardModal`
+- `TaskColumn`
+- `TaskCard`
+- `CreateTaskModal`
+- `EditTaskModal`
+- `SearchBar`
+
+## Database tables (must match)
+
+`boards`
+
+- `id` (INT, AUTO_INCREMENT, PRIMARY KEY)
+- `title` (VARCHAR)
+- `description` (TEXT)
+- `created_at` (TIMESTAMP)
+
+`tasks`
+
+- `id` (INT, AUTO_INCREMENT, PRIMARY KEY)
+- `board_id` (INT, FOREIGN KEY)
+- `title` (VARCHAR)
+- `description` (TEXT)
+- `status` (ENUM: todo, progress, done)
+- `created_at` (TIMESTAMP)
+
+## Project structure conventions
+
+- Pages in `/app`
+- API routes in `/app/api`
+- Reusable components in `/components`
+- DB connection helper in `/lib/db.js` (or keep the existing project’s equivalent and document it)
+
+## Deliverables (when requested)
+
+When asked to “generate the entire project” or produce a complete submission, include:
+
+- Exact folder structure
+- MySQL `CREATE TABLE` statements
+- Package installation commands
+- `.env.local` example
+- Step-by-step setup instructions
+- Sample data SQL inserts
+
+## Coding style requirements
+
+- Beginner-friendly, clean, readable, and well-structured
+- **Heavily commented** where intent is not obvious (explain *why*, not narrate trivial lines)
+- Keep components small and focused; prefer clear names over cleverness
