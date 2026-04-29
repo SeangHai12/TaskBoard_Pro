@@ -1,9 +1,6 @@
 ﻿"use client";
 
-/**
- * SearchBar
- * Simple input for real-time searching.
- */
+
 export default function SearchBar({ value, onChange }) {
   return (
     <div className="w-full">

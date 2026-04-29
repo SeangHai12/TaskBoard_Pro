@@ -6,10 +6,7 @@ function statusLabel(status) {
   return "Done";
 }
 
-/**
- * TaskCard
- * One task card with edit/delete and move buttons.
- */
+
 export default function TaskCard({ task, onEdit, onDelete, onMove }) {
   return (
     <div className="rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm transition hover:shadow-md">

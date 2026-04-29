@@ -2,10 +2,7 @@
 
 import TaskCard from "@/components/TaskCard";
 
-/**
- * TaskColumn
- * Renders a status column (To Do / In Progress / Done).
- */
+
 export default function TaskColumn({
   title,
   status,

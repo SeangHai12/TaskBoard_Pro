@@ -95,11 +95,6 @@ export default function LoginPage() {
               Sign up
             </Link>
 
-            <div className="text-xs text-zinc-500">
-              Tip: set <code className="rounded bg-zinc-100 px-1">APP_USERNAME</code> and{" "}
-              <code className="rounded bg-zinc-100 px-1">APP_PASSWORD</code> in{" "}
-              <code className="rounded bg-zinc-100 px-1">.env.local</code>.
-            </div>
           </form>
         </div>
       </div>

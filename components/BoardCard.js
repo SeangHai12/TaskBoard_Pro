@@ -2,10 +2,7 @@
 
 import Link from "next/link";
 
-/**
- * BoardCard
- * A simple clickable card that links to a board detail page.
- */
+
 export default function BoardCard({ board }) {
   return (
     <Link
