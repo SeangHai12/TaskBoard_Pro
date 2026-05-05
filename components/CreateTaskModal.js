@@ -52,12 +52,14 @@ export default function CreateTaskModal({ open, boardId, onClose, onCreated }) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4">
-      <div className="w-full max-w-lg rounded-2xl bg-white p-6 shadow-xl">
+      <div className="w-full max-w-lg rounded-2xl border border-zinc-200 bg-white p-6 shadow-xl dark:border-zinc-800 dark:bg-zinc-950">
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-semibold text-zinc-900">Create task</h2>
+          <h2 className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">
+            Create task
+          </h2>
           <button
             onClick={onClose}
-            className="rounded-lg px-3 py-2 text-sm text-zinc-600 hover:bg-zinc-100"
+            className="rounded-lg px-3 py-2 text-sm text-zinc-600 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-900"
           >
             Close
           </button>
@@ -65,33 +67,39 @@ export default function CreateTaskModal({ open, boardId, onClose, onCreated }) {
 
         <form onSubmit={handleSubmit} className="mt-4 space-y-4">
           <div>
-            <label className="text-sm font-medium text-zinc-800">Title</label>
+            <label className="text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              Title
+            </label>
             <input
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              className="mt-1 w-full rounded-xl border border-zinc-200 bg-white px-3 py-2 text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-zinc-400"
-              placeholder="e.g. Build API routes"
+              className="mt-1 w-full rounded-xl border border-zinc-200 bg-white px-3 py-2 text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-zinc-400 focus:ring-2 focus:ring-zinc-200 dark:border-zinc-800 dark:bg-zinc-900/40 dark:text-zinc-100 dark:placeholder:text-zinc-500 dark:focus:border-zinc-600 dark:focus:ring-zinc-800"
+              placeholder='e.g. "Build API routes"'
               required
             />
           </div>
 
           <div>
-            <label className="text-sm font-medium text-zinc-800">Description</label>
+            <label className="text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              Description
+            </label>
             <textarea
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              className="mt-1 w-full rounded-xl border border-zinc-200 bg-white px-3 py-2 text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-zinc-400"
-              placeholder="Optional description"
+              className="mt-1 w-full rounded-xl border border-zinc-200 bg-white px-3 py-2 text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-zinc-400 focus:ring-2 focus:ring-zinc-200 dark:border-zinc-800 dark:bg-zinc-900/40 dark:text-zinc-100 dark:placeholder:text-zinc-500 dark:focus:border-zinc-600 dark:focus:ring-zinc-800"
+              placeholder='Optional details (example: "Remember to validate boardId")'
               rows={3}
             />
           </div>
 
           <div>
-            <label className="text-sm font-medium text-zinc-800">Status</label>
+            <label className="text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              Status
+            </label>
             <select
               value={status}
               onChange={(e) => setStatus(e.target.value)}
-              className="mt-1 w-full rounded-xl border border-zinc-200 bg-white px-3 py-2 text-zinc-900 outline-none focus:border-zinc-400"
+              className="mt-1 w-full rounded-xl border border-zinc-200 bg-white px-3 py-2 text-zinc-900 outline-none focus:border-zinc-400 focus:ring-2 focus:ring-zinc-200 dark:border-zinc-800 dark:bg-zinc-900/40 dark:text-zinc-100 dark:focus:border-zinc-600 dark:focus:ring-zinc-800"
             >
               <option value="todo">To Do</option>
               <option value="progress">In Progress</option>
@@ -100,7 +108,7 @@ export default function CreateTaskModal({ open, boardId, onClose, onCreated }) {
           </div>
 
           {error && (
-            <div className="rounded-xl border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700">
+            <div className="rounded-xl border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700 dark:border-red-900/50 dark:bg-red-950/40 dark:text-red-200">
               {error}
             </div>
           )}
@@ -109,13 +117,13 @@ export default function CreateTaskModal({ open, boardId, onClose, onCreated }) {
             <button
               type="button"
               onClick={onClose}
-              className="rounded-xl border border-zinc-200 px-4 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-50"
+              className="rounded-xl border border-zinc-200 bg-white px-4 py-2 text-sm font-medium text-zinc-700 shadow-sm transition hover:bg-zinc-50 focus:outline-none focus:ring-2 focus:ring-zinc-200 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-200 dark:hover:bg-zinc-900 dark:focus:ring-zinc-800"
             >
               Cancel
             </button>
             <button
               disabled={loading}
-              className="rounded-xl bg-zinc-900 px-4 py-2 text-sm font-semibold text-white hover:bg-zinc-800 disabled:opacity-60"
+              className="rounded-xl bg-zinc-900 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-zinc-400 disabled:opacity-60 dark:bg-zinc-100 dark:text-zinc-950 dark:hover:bg-white"
             >
               {loading ? "Creating..." : "Create"}
             </button>
