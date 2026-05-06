@@ -33,7 +33,6 @@ export async function POST(request) {
       httpOnly: true,
       sameSite: "lax",
       path: "/",
-      // In dev on localhost, leaving secure=false avoids issues.
       secure: process.env.NODE_ENV === "production",
     });
     res.cookies.set("tbp_uid", String(user.id), {

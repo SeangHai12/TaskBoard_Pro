@@ -1,5 +1,4 @@
-﻿-- TaskBoard Pro - MySQL schema
--- Run this first to create the tables.
+﻿-- Run this first to create the tables.
 
 CREATE DATABASE IF NOT EXISTS taskboard_pro CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE taskboard_pro;
@@ -41,8 +40,3 @@ CREATE TABLE IF NOT EXISTS tasks (
     ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
--- Helpful indexes for common queries
--- NOTE:
--- - `board_id` is already indexed by InnoDB because it is used in a foreign key.
--- - For class setup simplicity, we avoid separate CREATE INDEX statements here
---   so this script can be re-run without duplicate-index errors.

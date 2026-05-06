@@ -24,7 +24,6 @@ export default function RootLayout({ children }) {
     >
       <body className="min-h-screen bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
         <div className="relative min-h-screen overflow-hidden bg-gradient-to-b from-zinc-50 via-zinc-50 to-zinc-100 dark:from-zinc-950 dark:via-zinc-950 dark:to-black">
-          {/* Decorative blobs (subtle, modern) */}
           <div
             aria-hidden="true"
             className="pointer-events-none absolute -top-40 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-gradient-to-br from-indigo-500/20 via-fuchsia-500/15 to-cyan-500/15 blur-3xl dark:from-indigo-500/20 dark:via-fuchsia-500/15 dark:to-cyan-500/10"
