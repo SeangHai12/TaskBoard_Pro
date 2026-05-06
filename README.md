@@ -31,14 +31,6 @@ npm install
 Open MySQL Workbench / phpMyAdmin / CLI and run:
 
 1. `sql/schema.sql`
-2. `sql/seed.sql` (optional sample data)
-
-### MySQL CLI example (boards + tasks)
-
-```bash
-mysql -u root -p < sql/schema.sql
-mysql -u root -p < sql/seed.sql
-```
 
 ## 4) Configure environment variables
 
